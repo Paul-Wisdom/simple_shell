@@ -21,7 +21,7 @@ int main(int argc __attribute__((unused)), char **arg)
 	char *argv[1024];
 	char **envp;
 	int s = 1;
-	char *path2, *temp = NULL, *path = NULL, *env_var = NULL, *temp2 = NULL;
+	char *path2, *temp = NULL, *path = NULL, *env_var = NULL;
 
 	while (s > 0)
 	{
