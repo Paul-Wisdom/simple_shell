@@ -22,7 +22,7 @@ int main(int argc __attribute__((unused)), char **arg)
 	char **envp;
 	int s = 1;
 	char *path2, *temp = NULL, *path = NULL, *env_var = NULL, *temp2 = NULL;
-	
+
 	while (s > 0)
 	{
 		envp = environ;
@@ -45,7 +45,7 @@ int main(int argc __attribute__((unused)), char **arg)
 			free(path);
 			free(env_var);
 			free(temp);
-			free (buffer);
+			free(buffer);
 			exit1(0);
 		}
 		else if (argv[0] == NULL)
@@ -74,11 +74,9 @@ int main(int argc __attribute__((unused)), char **arg)
 		s++;
 		if (space != 0)
 		{
-			//free (path);
-			//path = NULL;
-			free (argv[0]);
-			free (temp);
-			free (env_var);
+			free(argv[0]);
+			free(temp);
+			free(env_var);
 		}
 	}
 	return (0);
@@ -136,15 +134,7 @@ char **tokenizer(char **arg, char *buffer, char *sep)
 	arg[i] = NULL;
 	return (arg);
 }
-void free_func(char *buffer, char **envp)
+void free_func(char *buffer, char **envp __attribute__((unused)))
 {
-	int i = 0;
-	
 	free (buffer);
-	/*while (envp[i])
-	{
-		free (envp[i]);
-		i++;
-	}
-	free (envp);*/
 }

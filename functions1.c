@@ -19,18 +19,15 @@ char *path_searcher(char *command, char *path)
 		if (!file)
 			break;
 		file2 = strjoin(file, command);
-		free (file);
+		free(file);
 		if (file2 == NULL)
 			break;
 		if (stat(file2, &st) == 0)
 			return (file2);
-		else
-			free (file2);
+		free(file2);
 		token = strtok(NULL, ":");
 	}
-//	free (file);
-//	free (file2);
-	free (token);
+	free(token);
 	return (NULL);
 }
 
@@ -52,7 +49,7 @@ char *strjoin(char *str1, char *str2)
 	res = malloc(sizeof(char) * (len1 + len2 + 1));
 	if (res == NULL)
 	{
-		free (res);
+		free(res);
 		return (NULL);
 	}
 	for (i = 0; i < len1; i++)

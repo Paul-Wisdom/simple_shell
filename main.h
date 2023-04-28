@@ -22,7 +22,7 @@ char **tokenizer(char **, char *, char *);
 int str_chk(char *str1, char *str2);
 char *gete(char *str);
 char *split_str(char *str);
-char * _getenv(char *str);
+char *_getenv(char *str);
 void exit1(int num);
 char *str_cpy(char *);
 int str_cnp(char *str1, char *str2);

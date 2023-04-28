@@ -41,31 +41,3 @@ char *getenv2(char *name)
 	}
 	return (NULL);
 }
-/*
-void cleaner(char **envp, char **argv)
-{
-	char *buffer = NULL;
-	size_t buffsize = 0;
-	ssize_t g;
-
-	env(envp);
-	printf("cisfun# ");
-	g = getline(&buffer, &buffsize, stdin);
-	if (g == -1)
-		exit(1);
-	buff_cleaner(buffer, g);
-	tokenizer(argv, buffer, " ");
-}
-
- * int _strncmp(char *str1, char *str2, int len)
-{
-	int i;
-
-	for (i = 0; i < len; i++)
-	{
-		if (str1[i] != str2[i])
-			return (1);
-	}
-	return (1);
-}
-*/

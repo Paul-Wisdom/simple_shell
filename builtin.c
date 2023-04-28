@@ -32,29 +32,6 @@ int str_cnp(char *str1, char *str2)
 	return (0);
 }
 /**
- * str_cpy - copies strring
- * @str: string
- * Return: string
- *
-char *str_cpy(char *str)
-{
-	char *res;
-	int len = 0, i;
-
-	while (str[len])
-		len++;
-	res = malloc(sizeof(char) * (len + 1));
-	if (!res)
-	{
-		free(res);
-		return (NULL);
-	}
-	for (i = 0; i < len; i++)
-		res[i] = str[i];
-	return (str);
-}
-*/
-/**
  * _strlen - finds length of string
  * @str: the string
  * Return: length
@@ -71,21 +48,21 @@ int _strlen(char *str)
  * _set - sets env variable
  * @name: name
  * @value: value
+ * @env_var: environ
  * Return: 0 for success els 1
  */
 char *_set(char *name, char *value, char *env_var)
 {
 	size_t len;
-//	char *env_var;
 	char **ptr;
 
 	if (env_var)
-		free (env_var);
+		free(env_var);
 	len = _strlen(name) + _strlen(value) + 2;
 	env_var = malloc(len * sizeof(char));
 	if (env_var == NULL)
 	{
-		free (env_var);
+		free(env_var);
 		return (NULL);
 	}
 	join(env_var, len, '=', name, value);
@@ -99,10 +76,14 @@ char *_set(char *name, char *value, char *env_var)
 		}
 		ptr++;
 	}
-	free (env_var);
-//	free (ptr);
+	free(env_var);
 	return (NULL);
 }
+/**
+ * _memcpy - copies memory contents
+ * @str2: string
+ * Return: string
+ */
 char *_memcpy(char *str2)
 {
 	int i, len;
@@ -112,7 +93,7 @@ char *_memcpy(char *str2)
 	str1 = malloc(sizeof(char) * (len + 1));
 	if (!str1)
 	{
-		free (str1);
+		free(str1);
 		return (NULL);
 	}
 	for (i = 0; i < len; i++)
